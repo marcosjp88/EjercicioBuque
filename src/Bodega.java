@@ -9,4 +9,6 @@ public class Bodega {
 		cargaMaxima = val;
 		carga = 0;
 	}
+	
+
 }

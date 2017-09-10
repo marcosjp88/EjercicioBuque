@@ -22,13 +22,14 @@ public class Compania {
 		} else {
 			System.out.print("Ingrese el nombre del buque: ");
 			String nom = entrada.next();
-			b.add(numB,nom);
+			b = new Buque(numB,nom);
+			buques.add(b);
 		}
 	}
 
 	public Buque buscarBuque(int numb) {
 		int i = 0;
-		while((i < buques.size()) && (!buques.get(i).sosBodega())) {
+		while((i < buques.size()) && (!buques.get(i).sosBuque(numb))) {
 			i++;
 		}
 		if(i == buques.size()) {
@@ -50,14 +51,15 @@ public class Compania {
 			String desc = entrada.next();
 			System.out.print("Ingrese el precio unitario: ");
 			float preU = entrada.nextFloat();
-			p.add(codB,desc,preU);
+			p = new Producto(codB,desc,preU);
+			productos.add(p);
 		}
 	}
 	
 
-	public Buque buscarProducto(int codB) {
+	public Producto buscarProducto(int codB) {
 		int i = 0;
-		while((i < productos.size()) && (!productos.get(i).sosProducto())) {
+		while((i < productos.size()) && (!productos.get(i).sosProducto(codB))) {
 			i++;
 		}
 		if(i == productos.size()) {

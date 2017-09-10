@@ -10,4 +10,7 @@ public class Buque {
 		nombre 	= str;
 	}
 	
+	public boolean sosBuque(int codB) {
+		return codB == cod;
+	}
 }
