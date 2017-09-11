@@ -10,5 +10,6 @@ public class Bodega {
 		carga = 0;
 	}
 	
+	
 
 }

@@ -70,4 +70,29 @@ public class Compania {
 	}
 	
 	
+	public void agregarBodegasABuque() {
+		Scanner entrada = new Scanner(System.in);
+		System.out.print("Ingrese el numero de buque: ");
+		int numB = entrada.nextInt();
+		Buque b = this.buscarBuque(numB);
+		if(b == null) {
+			System.out.print("El buque que desea no existe!");
+		} else {
+			if(b.noTieneBodegas()) {
+				for(int i=0; i < 4 ; i++) {
+					Producto p;
+					do {
+						System.out.print("Ingrese el numero de producto: ");
+						int codB = entrada.nextInt();
+						p = this.buscarProducto(codB);
+					}while(p == null);
+					System.out.print("Ingrese la carga maxima de la bodega: ");
+					int cargaMa = entrada.nextInt();
+					b.agregarBodega(p, cargaMa);
+				}	
+			}
+		}
+	}
+	
+	
 }
